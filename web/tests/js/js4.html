@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>购物数量小程序</title>
+</head>
+<body>
+    购买数量<button id="sub">-</button><input type="text" value="0" style="text-align: center"><button id="add">+</button>
+    <script type="text/javascript">
+        $(Document).ready(function () {
+            $("#sub").click(function () {
+                if($("input").val()>0){
+                    var tem = $("input").val();
+                    tem--;
+                    $("input").val(tem);
+                }
+            });
+            $("#add").click(function () {
+                    var tem = $("input").val();
+                    tem++;
+                    $("input").val(tem);
+            });
+        });
+    </script>
+</body>
+</html>

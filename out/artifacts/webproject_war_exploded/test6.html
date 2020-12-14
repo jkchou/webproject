@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Web程序设计</title>
+    <style>
+        *{
+            background-color: #e0eee8;
+        }
+        button{
+            background-color: orange;
+        }
+        .head{
+            background-color: #3de1ad;
+            padding: 14px 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top:0;
+        }
+        .head a{
+            float: right;
+            display: block;
+            color: white;
+            background-color: #3de1ad;
+            padding: 0 14px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .body{
+            background-color: seashell ;
+            position:absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .topnav{
+            overflow: hidden;
+            background-color:#1bd1a5;
+        }
+        .topnav a{
+            float: left;
+            display: block;
+            color: white;
+            background-color: #1bd1a5;
+            text-align: center;
+            padding: 14px 33px;
+            text-decoration: none;
+            border-right:#373B44 solid;
+        }
+        .column{
+            background-color: seashell ;
+        }
+        .column.left{
+            float:left;
+            margin: 30px 10px;
+            padding: 10px;
+        }
+        .column.right{
+            overflow: hidden;
+            margin: 30px 10px;
+            padding: 10px;
+        }
+        .row:after{
+            content:"";
+            display:block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        &nbsp;&nbsp;东北林业大学
+        <button style="float: right;margin:0 10px">登录</button>
+        <a href="#">讲座</a>
+        <a href="#">课程</a>
+        <a href="#">读书</a>
+    </div>
+    <div style="background-color: #44CEF6;height: 200px;position: absolute;left: 0;right: 0;top:52px">
+        <div style="background-color: #44CEF6; position: relative;left:50px">
+            <br>
+            <h2 style="background-color:#44CEF6 ">Web程序设计</h2>
+            东北林业大学<br>
+            <button >课程报名</button>
+        </div>
+
+    </div>
+    <div class="body">
+        <div class="topnav">
+            <a style="background-color: #808080" href="#home">首页</a>
+            <a href="#chapter">课程章节</a>
+            <a href="teacher">教师团队</a>
+            <a href="resource">教学资源</a>
+            <a href="condition">教学条件</a>
+            <a style="border-right: none" href="material">参考教材</a>
+        </div>
+        <div class="row" style="background-color: seashell ;">
+            <div class="column left">
+                <img src="img/test.jpg" alt=""  width="300">
+            </div>
+            <div class="column right">
+                <h2 style="background-color: seashell ;">课程介绍</h2>
+                <p style="background-color: seashell ;">
+                    《Web应用程序设计》全面介绍Web应用程序设计的基本知识、基本方法和设计技巧。全书分10章。第1～4章介绍网页设计基础、HTML4.0主页的设计方法及如何使用JavaScript及Java Aoplet进行交互、动态主页设计；第5章介绍ASP及其应用；第6～10章介绍基于Visual Studio 2005C#环境下Web网络应用程序设计技术，内容包括基础，Web服务器控件及其在Web网站设计中的应用，在网页上实现图形设计和图像处理的技术及程序设计，Web数据库技术，XML及使用Web组件对XML文档及数据库进行信息交互的设计技术等。
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
