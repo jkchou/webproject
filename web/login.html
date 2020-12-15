@@ -3,13 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
+    <style>
+        .head{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .login{
+            width: 300px;
+            border:solid 1px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        input[type=text], select {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=password], select {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 50%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <div style="background-color: #44CEF6;position:absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
-        <form method="post" action="login">
-            请输入用户名:<input name="name" type="text"><br>
-            请输入密码:<input name="ps" type="password"><br>
-            <button>登录</button>
+    <div class="head">
+        <h2>信息管理系统</h2>
+    </div>
+    <div class="login">
+        <form style="text-align: center" method="post" action="login">
+            <label for="name">名称:</label>
+            <input name="name" id="name" type="text" placeholder="admin" >
+            <br>
+            <label for="ps">密码:</label>
+            <input name="ps" id="ps" type="password" placeholder="admin">
+            <br>
+            <input type="submit" value="提交">
         </form>
     </div>
 
