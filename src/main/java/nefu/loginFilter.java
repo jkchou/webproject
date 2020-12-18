@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*",filterName = "loginFilter")
+@WebFilter(urlPatterns = "/index.jsp",filterName = "loginFilter")
 public class loginFilter implements Filter {
     protected FilterConfig filterConfig;
     public void destroy() {

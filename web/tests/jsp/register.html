@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function test()
+        {
+            var p1,p2;
+            p1=zc.pas1.value;
+            p2=zc.pas2.value
+            alert("用户名"+zc.yhm.value);
+            alert("密码："+p1);
+            alert("确认密码"+p2);
+            alert("性别 女："+zc.sex[0].checked);
+            alert("性别 男："+zc.sex[1].checked);
+            alert("职业："+zc.id.value);
+            alert("个人简介"+zc.intr.value);
+            if(p1==p2)
+                return true;
+            else
+            {alert("用户名密码不一致");return false;}
+        }
+    </script>
+    <style type="text/css">
+        div {font-size:23px;text-align:center}
+
+    </style>
+</head>
+<body>
+<h1 align="center">注册</h1>
+<form name="zc" onsubmit="return test()" action="process.jsp" method="post">
+    <table align="center" border="1" width="800">
+
+        <tr><td><div  style="font-family:隶书;color:blue">
+            用户名：</div><td><input type="text" value="10-20" name="yhm" size="20">
+        <tr><td>密码：<td><input type="password" name="pas1">
+        <tr><td>确认密码：<td><input type="password" name="pas2">
+        <tr><td>手机号：<td><input type="text" name="tel">
+        <tr><td>性别：<td><input type="radio" name="sex" checked  value="1">女 <input type="radio" name="sex" value="2">男
+        <tr><td>爱好：<td><input type="checkbox" name="hobby">唱歌<br>
+            <input type="checkbox" name="hobby">跳舞<br>
+            <input type="checkbox" name="hobby" checked>足球 <br>
+            <input type="checkbox" name="hobby">篮球<br>
+        <tr><td>照片：<td><input type="file" name="tel">
+        <tr><td>职业:<td><select  name="id">
+            <option value="teacher">教师</option>
+            <option value="st">学生</option>
+            <option value="en">工程师</option>
+        </select>
+        <tr><td>自我介绍:<td><textarea cols=60 rows=5 name="intr">
+                      </textarea>
+        <tr><td colspan="2" align="center"> <input type="submit" value="提交"  >&nbsp;&nbsp; <input type="reset" value="重置">
+    </table>
+</form>
+</body>
+</html>

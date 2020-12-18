@@ -1,0 +1,57 @@
+<!--设计并实现石头剪子布游戏与电脑对弈，要求记录并显示每次对弈情况。也
+可以设计一个自己喜欢玩的小游戏。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="../../js/jquery-3.5.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>rock–paper–scissors</title>
+    <style>
+        td{
+            width: 130px;
+        }
+        div{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            text-align: center;
+        }
+        img{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>来和电脑玩石头剪刀布吧</h1>
+    <h3>点击下面的图片吧</h3>
+    <img id="rock" alt="1" src="../../img/rock.png" >
+    <img id="paper" alt="2" src="../../img/paper.png" >
+    <img id="scissors" alt="3" src="../../img/scissors.png">
+    <h2>电脑选择出：</h2>
+</div>
+<script type="text/javascript">
+    $(Document).ready(function () {
+        $("img").click(function(){
+            let user = $(this).attr("alt");
+            let pc = 1+Math.floor(Math.random()*3);
+            let res = "";
+            switch (user-pc) {
+                case 0 : res = "平手";break;
+                case 1 : res = "你赢了";break;
+                case 2 : res = "你输了";break;
+                case -1 : res = "你输了";break;
+                case -2 : res = "你赢了";break;
+            }
+            let $h2 = $("h2")
+            switch (pc) {
+                case 1: $h2.text("电脑选择出：石头，"+res);break;
+                case 2: $h2.text("电脑选择出：布，"+res);break;
+                case 3: $h2.text("电脑选择出：剪刀，"+res);break;
+            }
+
+        });
+    });
+</script>
+</body>
+</html>

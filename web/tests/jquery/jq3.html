@@ -1,0 +1,35 @@
+<!--3.利用 window 对象的 setTimeout 或 setInterval 方法实现网页计时器。设计
+时长为 2 两小时，可以为倒计时也可以为正计时。-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>jq3</title>
+</head>
+<body>
+<h1><span id="count" style="position: absolute;left:50%;transform:translate(-50%);color: #00FFFF">0</span></h1>
+    <script>
+        /*x=0
+        function f() {
+            if(x<2*60*60){
+                x = x+1
+                document.getElementById("count").innerText = Math.floor(x/3600)+"时"+Math.floor((x%3600)/60)+"分"+(x%3600)%60+"秒"
+                setTimeout("f()",1000)
+            }
+        }
+        f()*/
+        $(Document).ready(function () {
+            let x=0;
+            function f() {
+                if(x<2*60*60) {
+                    x = x + 1;
+                    $("#count").text(Math.floor(x/3600)+"时"+Math.floor((x%3600)/60)+"分"+(x%3600)%60+"秒");
+                    setTimeout(f,1000);
+                }
+            }
+            f();
+        });
+    </script>
+</body>
+</html>
