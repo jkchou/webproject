@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
+import bean.Data;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 @WebServlet("/login")
 public class login extends HttpServlet {
@@ -18,12 +21,10 @@ public class login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         String password = request.getParameter("ps");
+        Data data = new Data();
+        String sql = "SELECT name,password FROM user";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);
-            Statement stmt = conn.createStatement();
-            String sql = "SELECT name,password FROM user";
-            ResultSet rs = stmt.executeQuery(sql);
+            ResultSet rs = data.exeQ(sql);
             boolean flag =false;
             while (rs.next()){
                 String name_db = rs.getString("name");
@@ -35,11 +36,10 @@ public class login extends HttpServlet {
             }
             if(flag){
                 request.getSession().setAttribute("login","true");
-                request.getRequestDispatcher("/").forward(request,response);
+                request.getSession().setAttribute("userName",name);
+                request.getRequestDispatcher("/index.jsp").forward(request,response);
             }else request.getRequestDispatcher("/login.html").forward(request,response);
-            rs.close();
-            stmt.close();
-            conn.close();
+            data.close();
         }catch (Exception e){
             e.printStackTrace();
         }

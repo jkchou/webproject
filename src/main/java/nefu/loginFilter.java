@@ -13,19 +13,19 @@ public class loginFilter implements Filter {
     public void destroy() {
         filterConfig = null;
     }
-
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest)req;
         HttpServletResponse response = (HttpServletResponse)resp;
         HttpSession session = request.getSession();
-        String reqURL = request.getServletPath();
-        if(!(reqURL.equals("/login"))){
-            if(!session.getAttribute("login").equals("true")||session.getAttribute("login")==null){
-                response.sendRedirect("/login");
-                return;
-            }
+        String reqURL = request.getRequestURI();
+        if(reqURL.contains("login")){
+            chain.doFilter(req,resp);
         }
-        chain.doFilter(req, resp);
+        else if(session.getAttribute("login")==null){
+            response.sendRedirect("login.html");
+        }else if(session.getAttribute("login").equals("true")){
+            chain.doFilter(req,resp);
+        }else response.sendRedirect("login.html");
     }
 
     public void init(FilterConfig config) throws ServletException {
